@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<StackPane fx:id="stckVentas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="930.0" style="-fx-background-color: #DCE5DC;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.VentasViewController">
+   <children>
+      <AnchorPane fx:id="nodoVentas" prefHeight="600.0" prefWidth="930.0" style="-fx-background-color: #DCE5DC;">
+         <children>
+            <TableView fx:id="tablaProductos" layoutX="308.0" layoutY="85.0" prefHeight="181.0" prefWidth="587.0" style="-fx-background-color: ACB4AC;" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="35.0">
+              <columns>
+                <TableColumn fx:id="colCodigoBarra" prefWidth="75.0" text="Código" />
+                <TableColumn fx:id="colProducto" prefWidth="140.0" text="Producto" />
+                  <TableColumn fx:id="colMarca" prefWidth="140.0" text="Marca" />
+                  <TableColumn fx:id="colPrecio" prefWidth="100.0" text="Precio" />
+                  <TableColumn fx:id="colCantidadStock" prefWidth="132.0" text="Cantidad Stock" />
+              </columns>
+               <effect>
+                  <DropShadow color="WHITE" height="10.0" radius="4.5" spread="1.0" width="10.0" />
+               </effect>
+            </TableView>
+            <TableView fx:id="tablaAdquiridos" layoutX="38.0" layoutY="328.0" prefHeight="197.0" prefWidth="854.0" style="-fx-background-color: ACB4AC;" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0">
+               <columns>
+                  <TableColumn fx:id="colCantidad" prefWidth="130.0" text="Cantidad" />
+                  <TableColumn fx:id="colProducto1" prefWidth="252.0" text="Producto" />
+                  <TableColumn fx:id="colPrecio1" prefWidth="232.0" text="Precio" />
+                  <TableColumn fx:id="colIva" prefWidth="246.0" text="Precio con IVA" />
+               </columns>
+               <effect>
+                  <DropShadow color="WHITE" height="10.0" radius="4.5" spread="1.0" width="10.0" />
+               </effect>
+            </TableView>
+            <JFXButton fx:id="btnAgregarProducto" layoutX="84.0" layoutY="232.0" onAction="#agregarProducto" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: #00A86B; -fx-background-radius: 15px; -fx-border-radius: 15px;" text="Agregar" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow radius="16.22" width="45.88" />
+               </effect>
+               <font>
+                  <Font name="Century Gothic" size="17.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="18" text="" />
+               </graphic>
+            </JFXButton>
+            <JFXTextField fx:id="txtCantidad" alignment="CENTER" focusColor="#00a86b" labelFloat="true" layoutX="133.0" layoutY="161.0" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="71.0" promptText="Cantidad" unFocusColor="#808380">
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+            </JFXTextField>
+            <Text fx:id="textoAdquirido" fontSmoothingType="LCD" layoutX="334.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADQUIRIDO POR EL CLIENTE">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="textoProductos" fontSmoothingType="LCD" layoutX="376.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRODUCTOS" AnchorPane.leftAnchor="403.0" AnchorPane.rightAnchor="405.544921875">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="textoPagar" layoutX="613.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL A PAGAR: ">
+               <font>
+                  <Font name="Century Gothic Bold Italic" size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtPrecioTotal" layoutX="774.0" layoutY="556.0" prefHeight="29.0" prefWidth="87.0" text="500">
+               <font>
+                  <Font name="Century Gothic Bold" size="13.0" />
+               </font></TextField>
+            <Separator fx:id="separador" layoutX="37.0" layoutY="540.0" prefHeight="3.0" prefWidth="854.0" style="-fx-background-color: #00A86B;" />
+            <JFXButton fx:id="btnFacturar" layoutX="37.0" layoutY="553.0" onMouseClicked="#mostrarDialogoConfirmarCompra" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: #00A86B; -fx-background-radius: 15px; -fx-border-radius: 15px;" text="Facturar" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow radius="16.22" width="45.88" />
+               </effect>
+               <font>
+                  <Font name="Century Gothic" size="17.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="CART" size="25" textOrigin="TOP" />
+               </graphic>
+            </JFXButton>
+            <TextFlow fx:id="teFlowClientes" layoutX="80.0" layoutY="85.0" prefHeight="37.0" prefWidth="178.0">
+               <children>
+                  <MaterialDesignIconView fill="#4d4d4d" glyphName="ACCOUNT" size="25" text="" wrappingWidth="25.0" />
+                  <JFXComboBox fx:id="comboClientes" focusColor="#2ab56f" prefHeight="25.0" prefWidth="149.0" promptText="Clientes" unFocusColor="#bebec2" />
+               </children>
+            </TextFlow>
+            <HBox fx:id="hBoxBuscarCliente" alignment="CENTER_LEFT" layoutX="308.0" layoutY="38.0" prefHeight="34.0" prefWidth="587.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+               <children>
+                  <FontAwesomeIconView fill="#575757" glyphName="SEARCH" size="18">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <TextField fx:id="txtBuscarIdCode" onKeyReleased="#filtroIdCodigo" prefHeight="34.0" prefWidth="227.0" promptText="Buscar código de barra" style="-fx-background-radius: 15px; -fx-border-radius: 15px; -fx-background-color: white;">
+                     <font>
+                        <Font name="Century Gothic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIconView fill="#575757" glyphName="SEARCH" size="18">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <TextField fx:id="txtBuscarProducto" onKeyReleased="#filtroNombreProducto" prefHeight="34.0" prefWidth="246.0" promptText="Buscar nombre producto" style="-fx-background-radius: 15px; -fx-border-radius: 15px; -fx-background-color: white;">
+                     <font>
+                        <Font name="Century Gothic" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <Text fx:id="textoSignoDolar" layoutX="875.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$">
+               <font>
+                  <Font name="Century Gothic Bold Italic" size="17.0" />
+               </font>
+            </Text>
+            <AnchorPane fx:id="contenedorConfirmarCompra" layoutX="276.0" layoutY="109.0" prefHeight="246.0" prefWidth="392.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-radius: 15;" visible="false">
+               <children>
+                  <JFXButton layoutX="208.0" layoutY="201.0" onMouseClicked="#mostrarDialogoFacturacion" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #00A86B; -fx-background-radius: 8; -fx-border-radius: 8;" text="Si" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CHECK" size="18" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="57.0" layoutY="201.0" onMouseClicked="#esconderDialogoConfirmarCompra" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #f05236; -fx-background-radius: 8; -fx-border-radius: 8;" text="No" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" size="17" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" layoutX="360.0" onMouseClicked="#esconderDialogoConfirmarCompra" prefHeight="28.0" prefWidth="20.0" styleClass="button-close" text=" ">
+                     <graphic>
+                        <MaterialDesignIconView fill="#989cab" glyphName="CLOSE" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <VBox alignment="CENTER" layoutY="14.0" prefHeight="188.0" prefWidth="396.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/llevar.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="Estas seguro de que terminó de agregar todos los productos a comprar?" textAlignment="CENTER" wrappingWidth="250.6171875" />
+                        <Text fill="#3d3d46" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h5" text="Se realizará la compra" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="contenedorEliminarAdquirido" layoutX="276.0" layoutY="109.0" prefHeight="246.0" prefWidth="392.0" style="-fx-background-color: #fff; -fx-background-radius: 15; -fx-border-radius: 15;" visible="false">
+               <children>
+                  <JFXButton layoutX="208.0" layoutY="201.0" onMouseClicked="#eliminarAdquirido" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #f05236; -fx-background-radius: 8; -fx-border-radius: 8;" text="Si" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="18" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="57.0" layoutY="201.0" onMouseClicked="#esconderDialogoEliminarAdquirido" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #00A86B; -fx-background-radius: 8; -fx-border-radius: 8;" text="No" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" size="17" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" layoutX="360.0" onMouseClicked="#esconderDialogoConfirmarCompra" prefHeight="28.0" prefWidth="20.0" styleClass="button-close" text=" ">
+                     <graphic>
+                        <MaterialDesignIconView fill="#989cab" glyphName="CLOSE" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <VBox alignment="CENTER" layoutY="14.0" prefHeight="188.0" prefWidth="396.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="83.0" fitWidth="86.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/eliminar-Adquirido.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="Estas seguro de que quieres eliminar lo seleccionado?" textAlignment="CENTER" wrappingWidth="250.6171875" />
+                        <Text fill="#3d3d46" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h5" text="Se borrará por completo" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="contenedorFactura" layoutX="174.0" layoutY="50.0" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #fff;" visible="false" AnchorPane.topAnchor="50.0">
+               <children>
+                  <Text layoutX="209.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M A R K E T P L A C E  J J">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="16.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="25.0" fitWidth="36.0" layoutX="400.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/logoJJ.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="40.0" fitWidth="36.0" layoutX="165.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/llevar.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="228.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Factura   #">
+                     <font>
+                        <Font name="Century Gothic Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="textoNumFactura" layoutX="314.0" layoutY="47.0" text="504852">
+                     <font>
+                        <Font name="Century Gothic Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="58.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tienda #1" wrappingWidth="79.44579750671983" AnchorPane.leftAnchor="58.0">
+                     <font>
+                        <Font name="Century Gothic Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textoFecha" layoutX="114.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="101.92307911813259" AnchorPane.leftAnchor="114.0">
+                     <font>
+                        <Font name="Century Gothic Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="29.0" layoutY="65.0" prefHeight="3.0" prefWidth="385.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Text layoutX="398.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Loja - Ecuador" wrappingWidth="105.05128133296967" AnchorPane.rightAnchor="96.94871866703033">
+                     <font>
+                        <Font name="Century Gothic Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textoHora" layoutX="440.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora: " wrappingWidth="121.45508086681366" AnchorPane.rightAnchor="38.54491913318634">
+                     <font>
+                        <Font name="Century Gothic Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textoVendedor" layoutX="135.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.9999971985817" AnchorPane.leftAnchor="135.0">
+                     <font>
+                        <Font name="Century Gothic Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <TableView fx:id="tablaFactura" layoutX="17.0" layoutY="165.0" prefHeight="230.0" prefWidth="560.0" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="23.0">
+                    <columns>
+                        <TableColumn fx:id="colCantidad1" prefWidth="110.0" text="Cantidad" />
+                        <TableColumn fx:id="colProducto11" prefWidth="150.0" text="Producto" />
+                        <TableColumn fx:id="colPrecio11" prefWidth="150.0" text="Precio" />
+                        <TableColumn fx:id="colIva1" prefWidth="150.0" text="Precio con IVA" />
+                    </columns>
+                  </TableView>
+                  <Text fx:id="textoCliente" layoutX="458.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="115.9394525885582" AnchorPane.rightAnchor="26.060547411441803">
+                     <font>
+                        <Font name="Century Gothic Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textoPagoM" layoutX="471.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="105.05127426981926">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="206.0" layoutY="480.0" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Comprobante de Venta." AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="200.0">
+                     <font>
+                        <Font name="Century Gothic Italic" size="13.0" />
+                     </font>
+                  </Text>
+                  <JFXTextField fx:id="txtPagar" labelFloat="true" layoutX="426.0" layoutY="427.0" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="149.0" promptText="Contado o efectivo" />
+                  <JFXButton layoutX="354.0" layoutY="425.0" onMouseClicked="#pagar" style="-fx-background-color: #000; -fx-background-radius: 8;" text="Pagar" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="20.0" layoutY="462.0" onMouseClicked="#realizarCompra" style="-fx-background-color: #000; -fx-background-radius: 8; -fx-border-radius: 8;" text="Facturar" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <Text layoutX="426.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cambio:" wrappingWidth="65.3466854095459">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <JFXButton contentDisplay="CENTER" layoutX="562.0" onMouseClicked="#esconderDialogoFacturacion" prefHeight="28.0" prefWidth="20.0" styleClass="button-close" text=" ">
+                     <graphic>
+                        <MaterialDesignIconView fill="#989cab" glyphName="CLOSE" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <Text fx:id="textoCambio" layoutX="485.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="87.00001609325409">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="428.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: " wrappingWidth="42.999997198581696">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="396.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora:" wrappingWidth="42.999997198581696">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="58.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:" wrappingWidth="49.999996695667505">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="56.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vendedor:" wrappingWidth="82.99999862909317">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="395.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliente:" wrappingWidth="62.99999959766865">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="15.0" />
+                     </font>
+                  </Text>
+               </children></AnchorPane>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</StackPane>

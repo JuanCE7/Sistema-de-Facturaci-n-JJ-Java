@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="stckTarjeta" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.TarjetaViewController">
+   <children>
+      <AnchorPane fx:id="nodoTarjeta" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #DCE5DC;">
+         <children>
+            <Text fx:id="textoVistaPrevia" layoutX="20.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="V I S T A   P R E V I A   T A R J E T A">
+               <font>
+                  <Font name="Century Gothic" size="19.0" />
+               </font>
+            </Text>
+            <HBox fx:id="hBoxBuscarCliente" alignment="CENTER_LEFT" layoutX="20.0" layoutY="21.0" prefHeight="44.0" prefWidth="890.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 15px; -fx-border-radius: 15px;" AnchorPane.leftAnchor="20.0">
+               <children>
+                  <FontAwesomeIconView fill="#575757" glyphName="SEARCH" size="18">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin></FontAwesomeIconView>
+                  <TextField fx:id="txtBuscarId" onKeyReleased="#filtroId" prefHeight="51.0" prefWidth="269.0" promptText="Buscar Id" style="-fx-background-radius: 15px; -fx-border-radius: 15px; -fx-background-color: white;">
+                     <font>
+                        <Font name="Century Gothic" size="12.0" />
+                     </font>
+                  </TextField>
+                  <FontAwesomeIconView fill="#575757" glyphName="SEARCH" size="18">
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin></FontAwesomeIconView>
+                  <TextField fx:id="txtBuscarNombre" onKeyReleased="#filtroNombre" prefHeight="43.0" prefWidth="283.0" promptText="Buscar Nombre" style="-fx-background-radius: 15px; -fx-border-radius: 15px; -fx-background-color: white;">
+                     <font>
+                        <Font name="Century Gothic" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <TableView fx:id="tblClientes" layoutX="14.0" layoutY="83.0" prefHeight="474.0" prefWidth="892.0" style="-fx-background-color: ACB4AC;" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="70.0" text="Id" />
+                  <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
+                  <TableColumn fx:id="colCedula" prefWidth="120.0" text="Cédula" />
+                  <TableColumn fx:id="colTelefono" prefWidth="150.0" text="Teléfono" />
+                  <TableColumn fx:id="colCorreo" prefWidth="150.0" text="Correo" />
+                  <TableColumn fx:id="colDireccion" prefWidth="150.0" text="Dirección" />
+                  <TableColumn fx:id="colTipoCliente" prefWidth="100.0" text="Tipo Cliente" />
+               </columns>
+               <effect>
+                  <DropShadow color="WHITE" height="10.0" radius="4.5" spread="1.0" width="10.0" />
+               </effect>
+            </TableView>
+            <ImageView fx:id="imgPrevia" fitHeight="210.0" fitWidth="362.0" layoutX="340.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/Tarjeta.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="textoNombreCliente" fill="WHITE" layoutX="558.0" layoutY="558.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOMBRE CLIENTE">
+               <font>
+                  <Font name="Century Gothic Bold Italic" size="15.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="btnGenerar" layoutX="759.0" layoutY="449.0" onMouseClicked="#generarTarjeta" prefHeight="44.0" prefWidth="127.0" style="-fx-background-color: #00A86B; -fx-background-radius: 8; -fx-border-radius: 8;" text="G E N E R A R" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold Italic" size="15.0" />
+               </font></JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

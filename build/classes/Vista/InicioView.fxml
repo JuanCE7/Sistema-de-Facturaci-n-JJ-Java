@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="stckCasa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="930.0" style="-fx-background-color: #f7f7f7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.InicioViewController">
+   <children>
+      <AnchorPane fx:id="nodoHome" onKeyReleased="#abrirFacturas" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #DCE5DC;">
+         <children>
+            <AnchorPane fx:id="nodoBienvenida" layoutX="17.0" layoutY="63.0" prefHeight="147.0" prefWidth="869.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <ImageView fitHeight="133.0" fitWidth="879.0" layoutX="8.0" layoutY="19.0" opacity="0.6" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="19.0">
+                     <image>
+                        <Image url="@../Imagenes/home-background.png" />
+                     </image>
+                     <effect>
+                        <DropShadow height="15.5" radius="5.875" spread="0.1" width="10.0" />
+                     </effect>
+                  </ImageView>
+                  <Label fx:id="txtMensajeBienvenida" layoutX="36.0" layoutY="70.0" prefHeight="30.0" prefWidth="552.0" text="Que te parece si añadimos más clientes?">
+                     <font>
+                        <Font name="Century Gothic" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txtBienvenido" layoutX="36.0" layoutY="25.0" text="BIENVENIDO!">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <VBox fx:id="hBoxTotalCaja" alignment="CENTER" layoutX="593.0" layoutY="440.0" opacity="0.7" prefHeight="127.0" prefWidth="139.0" style="-fx-border-color: #f4f4f4; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 2;">
+               <children>
+                  <Label fx:id="lblTotalCaja" contentDisplay="CENTER" text="500">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL EN CAJA">
+                     <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox fx:id="HboxTotalClientes" alignment="CENTER" layoutX="249.0" layoutY="440.0" opacity="0.7" prefHeight="127.0" prefWidth="139.0" style="-fx-border-color: #f4f4f4; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 2;">
+               <children>
+                  <Label fx:id="lblTotalClientes" contentDisplay="CENTER" text="500">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CLIENTES">
+                     <font>
+                        <Font name="Century Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <TableView fx:id="tblClientes" layoutX="49.0" layoutY="225.0" opacity="0.78" prefHeight="200.0" prefWidth="833.0" style="-fx-background-color: ACB4AC;" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+              <columns>
+                <TableColumn fx:id="columnaIdCliente" prefWidth="277.7" text="idCliente" />
+                <TableColumn fx:id="columUsuarioCliente" prefWidth="300.0" text="Usuario" />
+                  <TableColumn fx:id="columnaCompraCliente" prefWidth="277.7" text="Compra" />
+              </columns>
+               <effect>
+                  <DropShadow color="WHITE" height="10.0" radius="4.5" spread="1.0" width="10.0" />
+               </effect>
+            </TableView>
+            <AnchorPane fx:id="busquedaRaizPrincipal" layoutX="40.0" layoutY="14.0" prefHeight="46.0" prefWidth="851.0" style="-fx-background-color: fff; -fx-background-radius: 15; -fx-border-radius: 15;" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+               <children>
+                  <FontAwesomeIconView fill="#575757" glyphName="SEARCH" layoutX="25.0" layoutY="30.0" size="20" />
+                  <TextField fx:id="txtBuscarClienteReciente" layoutX="66.0" layoutY="8.0" onKeyReleased="#eventBuscar" prefHeight="31.0" prefWidth="764.0" promptText="Buscar cliente reciente" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-background-color: fff;" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font name="Century Gothic" size="12.0" />
+                     </font></TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="contenedorFacturas" layoutX="271.0" layoutY="104.0" prefHeight="366.0" prefWidth="461.0" style="-fx-background-color: #DCE5DC;" visible="false" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="100.0">
+               <children>
+                  <Text layoutX="206.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F A C T U R A S" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+                     <font>
+                        <Font name="Century Gothic" size="17.0" />
+                     </font>
+                  </Text>
+                  <TableView fx:id="tablaFacturas" layoutX="37.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
+                    <columns>
+                      <TableColumn fx:id="colIdFactura" prefWidth="125.0" text="Id Factura" />
+                      <TableColumn fx:id="colIdCliente" prefWidth="120.0" text="Id Cliente" />
+                        <TableColumn fx:id="colCompra" prefWidth="125.0" text="Compra" />
+                        <TableColumn fx:id="colFecha" prefWidth="125.0" text="Fecha" />
+                    </columns>
+                     <effect>
+                        <DropShadow color="WHITE" height="10.0" radius="4.5" spread="1.0" width="10.0" />
+                     </effect>
+                  </TableView>
+                  <JFXButton contentDisplay="CENTER" layoutX="498.0" onMouseClicked="#esconderDialogoFacturas" prefHeight="28.0" prefWidth="20.0" styleClass="button-close" text=" ">
+                     <graphic>
+                        <MaterialDesignIconView fill="#989cab" glyphName="CLOSE" size="20" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <Text layoutX="40.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CTRL + F : Ver Registro Facturas">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Text>
+         </children>
+         <effect>
+            <DropShadow height="10.0" radius="4.5" width="10.0" />
+         </effect>
+      </AnchorPane>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</StackPane>

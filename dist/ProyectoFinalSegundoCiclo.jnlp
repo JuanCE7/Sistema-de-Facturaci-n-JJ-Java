@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ProyectoFinalSegundoCiclo.jnlp">
+  <information>
+    <title>ProyectoFinalSegundoCiclo</title>
+    <vendor>LENOVO</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ProyectoFinalSegundoCiclo.jar" size="16460708" download="eager" />
+    <jar href="lib\AnimateFX-1.2.0.jar" size="85823" download="eager" />
+    <jar href="lib\controlsfx-8.40.18.jar" size="1436095" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\gson-2.8.6.jar" size="240255" download="eager" />
+    <jar href="lib\itextpdf-5.5.12.jar" size="2320211" download="eager" />
+    <jar href="lib\jfoenix-8.0.8.jar" size="2708772" download="eager" />
+    <jar href="lib\mysql-connector-j-8.1.0.jar" size="2485905" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="Controlador.Principal"  name="ProyectoFinalSegundoCiclo" />
+  <update check="always"/>
+</jnlp>

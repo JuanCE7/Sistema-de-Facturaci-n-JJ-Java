@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.PreloaderControl">
+   <children>
+      <Pane layoutX="14.0" layoutY="23.0" prefHeight="295.0" prefWidth="570.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="186.0" fitWidth="274.0" layoutX="265.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/logoJJ.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="116.0" layoutY="37.0" prefHeight="73.0" prefWidth="298.0" text="M A R K E T P L A C E" textFill="#f8f4f4">
+               <font>
+                  <Font name="Century Gothic" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="116.0" layoutY="110.0" text="Version 1.0" textFill="#fcf2f2">
+               <font>
+                  <Font name="Century Gothic Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="298.0" layoutY="271.0" text="\@ 2021 JJ Corporation: Juan Castillo, Juan Carreño" textFill="#f8f8f8">
+               <font>
+                  <Font name="Cambria" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="progress" layoutX="379.0" layoutY="220.0" prefHeight="20.0" prefWidth="115.0" text="Cargando" textFill="#fcf9f9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXProgressBar fx:id="progressBar1" blendMode="GREEN" layoutY="247.0" prefHeight="7.0" prefWidth="570.0">
+               <effect>
+                  <DropShadow color="#26ff00" />
+               </effect></JFXProgressBar>
+            <JFXProgressBar fx:id="progressBar" blendMode="GREEN" layoutX="-100.0" layoutY="151.0" prefHeight="7.0" prefWidth="310.0" rotate="-90.0">
+               <effect>
+                  <DropShadow color="#26ff00" />
+               </effect></JFXProgressBar>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

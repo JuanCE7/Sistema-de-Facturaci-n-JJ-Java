@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.LoginController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fx:id="log1" fitHeight="500.0" fitWidth="801.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" />
+            <JFXTextField fx:id="txtUsuario" focusColor="#4d4d4d" labelFloat="true" layoutX="163.0" layoutY="192.0" onAction="#login" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="275.0" promptText="Usuario">
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtContraseña" focusColor="#4d4d4d" labelFloat="true" layoutX="163.0" layoutY="248.0" prefHeight="25.0" prefWidth="275.0">
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="pfContraseña" focusColor="#4d4d4d" labelFloat="true" layoutX="163.0" layoutY="248.0" onAction="#login" onKeyTyped="#eventKey" prefHeight="23.0" prefWidth="275.0" promptText="Contraseña">
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton fx:id="btnIngresar" buttonType="RAISED" layoutX="170.0" layoutY="362.0" onAction="#login" prefHeight="46.0" prefWidth="260.0" style="-fx-background-color: #4d4d4d; -fx-background-radius: 20;" text="I N G R E S A R" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="204.0" layoutY="55.0" text="Ingreso" textFill="#4d4d4d">
+               <font>
+                  <Font name="Century Gothic" size="55.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="close" layoutX="-1.0" layoutY="3.0" onAction="#close" prefHeight="40.0" prefWidth="40.0" text=" " translateX="1.0" translateY="-3.0">
+               <graphic>
+                  <MaterialDesignIconView fill="#fffefe" glyphName="CLOSE" size="30" styleClass="glyph-icon" text="" />
+               </graphic>
+            </JFXButton>
+            <FontAwesomeIconView fill="#4d4d4d" glyphName="USER" layoutX="117.0" layoutY="215.0" size="30" text="" />
+            <MaterialDesignIconView fill="#4d4d4d" glyphName="KEY" layoutX="114.0" layoutY="271.0" size="30" />
+            <Pane fx:id="icono" layoutX="409.0" layoutY="245.0" prefHeight="29.0" prefWidth="43.0">
+               <children>
+                  <FontAwesomeIconView fx:id="icon" glyphName="EYE_SLASH" layoutX="11.0" layoutY="21.0" opacity="0.5" size="15" />
+               </children>
+            </Pane>
+            <MaterialDesignIconView fill="WHITE" glyphName="LOGIN" layoutX="217.0" layoutY="396.0" size="30" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="register" layoutX="571.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMouseEntered="#preShow" onMouseExited="#postHide" onMousePressed="#pressed" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fx:id="log2" fitHeight="500.0" fitWidth="801.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="201.0" layoutY="39.0" text="Registro" textFill="#4d4d4d">
+               <font>
+                  <Font name="Century Gothic" size="55.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtNombre" alignment="TOP_LEFT" focusColor="#4d4d4d" labelFloat="true" layoutX="164.0" layoutY="126.0" onAction="#register" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="118.0" promptText="Nombre">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtCedula" focusColor="#4d4d4d" labelFloat="true" layoutX="306.0" layoutY="126.0" onAction="#register" onKeyReleased="#eventKeyTwo" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="118.0" promptText="Cédula">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtCorreo" focusColor="#4d4d4d" labelFloat="true" layoutX="164.0" layoutY="183.0" onAction="#register" onKeyReleased="#eventKeyTwo" prefHeight="25.0" prefWidth="260.0" promptText="Correo">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="btnRegistrar" buttonType="RAISED" layoutX="170.0" layoutY="420.0" onAction="#register" prefHeight="46.0" prefWidth="260.0" style="-fx-background-color: #4d4d4d; -fx-background-radius: 20;" text="R E G I S T R A R" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="txtUsuario1" focusColor="#4d4d4d" labelFloat="true" layoutX="164.0" layoutY="238.0" onAction="#register" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="260.0" promptText="Usuario">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtContraseña1" focusColor="#4d4d4d" labelFloat="true" layoutX="164.0" layoutY="295.0" prefHeight="25.0" prefWidth="260.0">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="pfContraseña1" focusColor="#4d4d4d" labelFloat="true" layoutX="164.0" layoutY="295.0" onAction="#register" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="260.0" promptText="Contraseña">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font></JFXPasswordField>
+            <ImageView fx:id="more" fitHeight="40.0" fitWidth="30.0" layoutX="-1.0" layoutY="235.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Imagenes/mas.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="txtTelefono" focusColor="#4d4d4d" labelFloat="true" layoutX="164.0" layoutY="351.0" onAction="#register" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="118.0" promptText="Teléfono">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtDireccion" focusColor="#4d4d4d" labelFloat="true" layoutX="306.0" layoutY="351.0" onAction="#register" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="118.0" promptText="Dirección">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXTextField>
+            <MaterialDesignIconView fill="#4d4d4d" glyphName="ACCOUNT" layoutX="125.0" layoutY="149.0" size="30" />
+            <MaterialDesignIconView fill="#4d4d4d" glyphName="EMAIL" layoutX="125.0" layoutY="206.0" size="30" />
+            <MaterialDesignIconView fill="#4d4d4d" glyphName="PHONE" layoutX="127.0" layoutY="376.0" size="30" />
+            <MaterialDesignIconView fill="#4d4d4d" glyphName="LOCK" layoutX="127.0" layoutY="318.0" size="30" />
+            <MaterialDesignIconView fill="#4d4d4d" glyphName="ACCOUNT_CIRCLE" layoutX="127.0" layoutY="261.0" size="30" />
+            <OctIconView fill="#4d4d4d" glyphName="LOCATION" layoutX="283.0" layoutY="372.0" size="25" />
+            <MaterialDesignIconView fill="WHITE" glyphName="ARCHIVE" layoutX="217.0" layoutY="454.0" size="30" />
+            <Pane fx:id="icono1" layoutX="390.0" layoutY="293.0" prefHeight="29.0" prefWidth="43.0">
+               <children>
+                  <FontAwesomeIconView fx:id="icon1" glyphName="EYE_SLASH" layoutX="11.0" layoutY="21.0" opacity="0.5" size="15" />
+               </children>
+            </Pane>
+            <Label fx:id="lbCorreo" layoutX="164.0" layoutY="210.0" prefHeight="17.0" prefWidth="260.0" />
+            <Label fx:id="lbCedula" layoutX="306.0" layoutY="153.0" prefHeight="17.0" prefWidth="118.0" />
+            <Label fx:id="lbCedula1" layoutX="164.0" layoutY="380.0" prefHeight="17.0" prefWidth="118.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

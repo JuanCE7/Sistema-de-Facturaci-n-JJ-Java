@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="stckProductos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ProductosViewController">
+   <children>
+      <AnchorPane fx:id="nodoProductos" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #DCE5DC;">
+         <children>
+            <HBox fx:id="hBoxBuscarProducto" alignment="CENTER" layoutX="20.0" layoutY="21.0" prefHeight="44.0" prefWidth="641.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 15px; -fx-border-radius: 15px;" AnchorPane.leftAnchor="20.0">
+               <children>
+                  <FontAwesomeIconView fill="#575757" glyphName="SEARCH" size="18" />
+                  <TextField fx:id="txtBuscarIdCode" onKeyReleased="#filtroIdCodigo" prefHeight="51.0" prefWidth="269.0" promptText="Buscar código de Barra" style="-fx-background-radius: 15px; -fx-border-radius: 15px; -fx-background-color: white;">
+                     <font>
+                        <Font name="Century Gothic" size="12.0" />
+                     </font></TextField>
+                  <FontAwesomeIconView fill="#575757" glyphName="SEARCH" size="18" />
+                  <TextField fx:id="txtBuscarProducto" onKeyReleased="#filtroNombreProducto" prefHeight="43.0" prefWidth="283.0" promptText="Buscar Producto" style="-fx-background-radius: 15px; -fx-border-radius: 15px; -fx-background-color: white;">
+                     <font>
+                        <Font name="Century Gothic" size="12.0" />
+                     </font></TextField>
+               </children>
+            </HBox>
+            <JFXButton fx:id="btnNuevoProducto" alignment="CENTER" layoutX="738.0" layoutY="21.0" onMouseClicked="#mostrarDialogoAgregarProducto" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: #00A86B; -fx-background-radius: 15px; -fx-border-radius: 15px;" text="Agregar producto" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow height="24.11" radius="15.442499999999999" width="39.66" />
+               </effect>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="18" />
+               </graphic>
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="tblProductos" layoutX="14.0" layoutY="83.0" prefHeight="474.0" prefWidth="892.0" style="-fx-background-color: ACB4AC;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+              <columns>
+                <TableColumn fx:id="columnaIdCodigo" prefWidth="132.0" text="Codigo de Barra" />
+                <TableColumn fx:id="columnaProducto" prefWidth="250.0" text="Producto" />
+                  <TableColumn fx:id="columnaMarcaProducto" prefWidth="170.0" text="Marca" />
+                  <TableColumn fx:id="columnaCantidadProducto" prefWidth="150.0" text="Cantidad" />
+                  <TableColumn fx:id="columnaPrecioProducto" prefWidth="191.0" text="Precio" />
+              </columns>
+               <effect>
+                  <DropShadow color="WHITE" height="10.0" radius="4.5" spread="1.0" width="10.0" />
+               </effect>
+            </TableView>
+            <AnchorPane fx:id="contenedorAgregarProducto" layoutX="106.0" layoutY="108.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="429.0" prefWidth="740.0" style="-fx-background-radius: 10; -fx-background-radius: 15px; -fx-border-radius: 15px; -fx-background-color: #fff;" visible="false">
+               <children>
+                  <JFXTextField fx:id="txtCodigoBarras" focusColor="#2ab56f" labelFloat="true" layoutX="40.0" layoutY="119.0" onKeyTyped="#eventKey" prefHeight="30.0" prefWidth="195.0" promptText="Codigo de barras" styleClass="jfx-text-field" unFocusColor="#bebec2">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtMarcaProducto" focusColor="#2ab56f" labelFloat="true" layoutX="40.0" layoutY="250.0" onKeyTyped="#eventKey" prefHeight="30.0" prefWidth="195.0" promptText="Marca producto" styleClass="jfx-text-field" unFocusColor="#bebec2">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtCantidadProducto" focusColor="#2ab56f" labelFloat="true" layoutX="275.0" layoutY="250.0" onKeyTyped="#eventKey" prefHeight="30.0" prefWidth="195.0" promptText="Cantidad producto" styleClass="jfx-text-field" unFocusColor="#bebec2">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtPrecioProducto" focusColor="#2ab56f" labelFloat="true" layoutX="509.0" layoutY="250.0" onKeyTyped="#eventKey" prefHeight="30.0" prefWidth="195.0" promptText="Precio" styleClass="jfx-text-field" unFocusColor="#bebec2">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="btnGuardarProducto" layoutX="392.0" layoutY="388.0" onMouseClicked="#nuevoProducto" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #00A86B; -fx-border-radius: 8; -fx-background-radius: 8;" styleClass="action-button" text="Guardar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CHECK" size="18" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnActualizarProducto" layoutX="392.0" layoutY="388.0" onMouseClicked="#actualizarProducto" prefHeight="27.0" prefWidth="131.0" style="-fx-background-color: #00A86B; -fx-background-radius: 8; -fx-border-radius: 8;" text="Actualizar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="txtNombreProducto" focusColor="#2ab56f" labelFloat="true" layoutX="509.0" layoutY="119.0" onKeyTyped="#eventKey" prefHeight="30.0" prefWidth="195.0" promptText="Nombre producto" styleClass="jfx-text-field" unFocusColor="#bebec2">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="btnCancelarAgregarProducto" layoutX="242.0" layoutY="388.0" onMouseClicked="#cerrarDialogoAgregarProducto" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #f05236; -fx-background-radius: 8; -fx-border-radius: 8;" text="Cancelar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="18" />
+                     </graphic>
+                  </JFXButton>
+                  <HBox alignment="CENTER" layoutX="-308.0" layoutY="14.0" prefHeight="45.0" prefWidth="873.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Text fx:id="txtAgregarProducto" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Agregar producto">
+                           <font>
+                              <Font name="Century Gothic" size="23.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <JFXButton contentDisplay="CENTER" layoutX="704.0" onMouseClicked="#cerrarDialogoAgregarProducto" prefHeight="28.0" prefWidth="20.0" styleClass="button-close" text=" ">
+                     <graphic>
+                        <MaterialDesignIconView fill="#989cab" glyphName="CLOSE" size="20" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="contenedorEliminarProducto" layoutX="280.0" layoutY="170.0" prefHeight="246.0" prefWidth="392.0" style="-fx-background-color: #fff; -fx-background-radius: 15px; -fx-border-radius: 15px;" visible="false">
+               <children>
+                  <JFXButton layoutX="208.0" layoutY="201.0" onMouseClicked="#eliminarProductos" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #f05236; -fx-background-radius: 8; -fx-border-radius: 8;" text="Eliminar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="17" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="57.0" layoutY="201.0" onMouseClicked="#esconderDialogoEliminarProducto" prefHeight="25.0" prefWidth="131.0" style="-fx-background-color: #00A86B; -fx-background-radius: 8; -fx-border-radius: 8;" text="Cancelar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" size="17" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" layoutX="360.0" onMouseClicked="#esconderDialogoEliminarProducto" prefHeight="28.0" prefWidth="20.0" styleClass="button-close" text=" ">
+                     <graphic>
+                        <MaterialDesignIconView fill="#989cab" glyphName="CLOSE" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <VBox alignment="CENTER" layoutY="14.0" prefHeight="188.0" prefWidth="396.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Imagenes/usb.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h4" text="Estas seguro de eliminar el producto permanentemente?" textAlignment="CENTER" wrappingWidth="250.6171875" />
+                        <Text fill="#3d3d46" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h5" text="La información no se podra recuperar!" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

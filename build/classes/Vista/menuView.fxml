@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stckMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.MenuViewController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="930.0" style="-fx-background-color: f5f5f7;">
+         <children>
+            <AnchorPane fx:id="rootContenedor" layoutX="70.0" prefHeight="600.0" prefWidth="930.0" style="-fx-background-color: #f5f5f7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane fx:id="tooltipInicio" layoutX="70.0" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="148.0" visible="false">
+               <children>
+                  <AnchorPane layoutX="39.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: black; -fx-background-radius: 5;" translateX="-30.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="4.0" text="Inicio" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <MaterialDesignIconView glyphName="MENU_LEFT" layoutX="14.0" layoutY="50.0" size="50" text="" translateX="-30.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tooltipClientes" layoutX="70.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="148.0" visible="false">
+               <children>
+                  <AnchorPane layoutX="39.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="75.0" style="-fx-background-color: black; -fx-background-radius: 5;" translateX="-30.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="8.0" layoutY="4.0" prefHeight="21.0" prefWidth="56.0" text="Clientes" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <MaterialDesignIconView glyphName="MENU_LEFT" layoutX="14.0" layoutY="50.0" size="50" text="" translateX="-30.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tooltipVenta" layoutX="70.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="148.0" visible="false">
+               <children>
+                  <AnchorPane layoutX="39.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="75.0" style="-fx-background-color: black; -fx-background-radius: 5;" translateX="-30.0">
+                     <children>
+                        <Label layoutX="12.0" layoutY="4.0" text="Ventas" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <MaterialDesignIconView glyphName="MENU_LEFT" layoutX="14.0" layoutY="50.0" size="50" text="" translateX="-30.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tooltipProductos" layoutX="70.0" layoutY="240.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="148.0" visible="false" AnchorPane.leftAnchor="70.0">
+               <children>
+                  <AnchorPane layoutX="39.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: black; -fx-background-radius: 5;" translateX="-30.0">
+                     <children>
+                        <Label layoutX="11.0" layoutY="5.0" text="Productos" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <MaterialDesignIconView glyphName="MENU_LEFT" layoutX="14.0" layoutY="50.0" size="50" text="" translateX="-30.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tooltipAgregarUsuario" layoutX="70.0" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="169.0" visible="false" AnchorPane.bottomAnchor="240.0">
+               <children>
+                  <AnchorPane layoutX="39.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: black; -fx-background-radius: 5;" translateX="-30.0">
+                     <children>
+                        <Label layoutX="11.0" layoutY="5.0" prefHeight="21.0" prefWidth="70.0" text="Usuarios" textFill="WHITE" translateX="-1.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <MaterialDesignIconView glyphName="MENU_LEFT" layoutX="14.0" layoutY="50.0" size="50" text="" translateX="-30.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tooltipTarjeta" layoutX="70.0" layoutY="360.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="148.0" visible="false" AnchorPane.bottomAnchor="180.0">
+               <children>
+                  <AnchorPane layoutX="39.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: black; -fx-background-radius: 5;" translateX="-30.0">
+                     <children>
+                        <Label layoutX="12.0" layoutY="5.0" prefHeight="21.0" prefWidth="70.0" text="Tarjeta" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <MaterialDesignIconView glyphName="MENU_LEFT" layoutX="14.0" layoutY="50.0" size="50" text="" translateX="-30.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tooltipAcerca" layoutX="70.0" layoutY="420.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="148.0" visible="false" AnchorPane.bottomAnchor="120.0">
+               <children>
+                  <AnchorPane layoutX="39.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: black; -fx-background-radius: 5;" translateX="-30.0">
+                     <children>
+                        <Label layoutX="12.0" layoutY="5.0" text="Acerca" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <MaterialDesignIconView glyphName="MENU_LEFT" layoutX="14.0" layoutY="50.0" size="50" text="" translateX="-30.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tooltipConfiguracion" layoutX="70.0" layoutY="540.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="148.0" visible="false" AnchorPane.bottomAnchor="60.0">
+               <children>
+                  <AnchorPane layoutX="39.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="119.0" style="-fx-background-color: black; -fx-background-radius: 5;" translateX="-30.0">
+                     <children>
+                        <Label layoutX="12.0" layoutY="5.0" text="Configuración" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <MaterialDesignIconView glyphName="MENU_LEFT" layoutX="14.0" layoutY="50.0" size="50" text="" translateX="-30.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tooltipSalir" layoutX="70.0" layoutY="540.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="148.0" visible="false" AnchorPane.bottomAnchor="0.0">
+               <children>
+                  <AnchorPane layoutX="39.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="56.0" style="-fx-background-color: black; -fx-background-radius: 5;" translateX="-30.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="5.0" text="Salir" textFill="WHITE" translateX="-2.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <MaterialDesignIconView glyphName="MENU_LEFT" layoutX="14.0" layoutY="50.0" size="50" text="" translateX="-30.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="rootSideMenu" prefHeight="600.0" prefWidth="0.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="70.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/logoJJ.jpg" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnInicio" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutY="60.0" onMouseClicked="#inicioWindows" prefHeight="60.0" prefWidth="70.0" ripplerFill="WHITE" text=" ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#76787c" glyphName="HOME" size="25" />
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <JFXButton fx:id="btnClientes" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutY="120.0" onMouseClicked="#clientesWindows" prefHeight="60.0" prefWidth="70.0" ripplerFill="#ffffff16" text=" " textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#76787c" glyphName="ACCOUNT" size="25" />
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <JFXButton fx:id="btnVentas" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutY="180.0" onMouseClicked="#ventasWindows" prefHeight="60.0" prefWidth="70.0" ripplerFill="#ffffff16" text="  " textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#76787c" glyphName="CART" size="25" textOrigin="TOP" />
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <JFXButton fx:id="btnProductos" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutY="240.0" onMouseClicked="#productosWindows" prefHeight="60.0" prefWidth="70.0" ripplerFill="#ffffff16" text="  " textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <graphic>
+                        <MaterialDesignIconView fill="#76787c" glyphName="PRINTER" size="25" textOrigin="TOP" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnAgregarUsuario" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutY="300.0" onMouseClicked="#agregarUsuarioWindows" prefHeight="60.0" prefWidth="70.0" ripplerFill="#ffffff16" text=" " textFill="WHITE" AnchorPane.bottomAnchor="240.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#76787c" glyphName="ACCOUNT_PLUS" size="25" />
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <JFXButton fx:id="btnTarjeta" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutY="360.0" onMouseClicked="#tarjetaWindows" prefHeight="60.0" prefWidth="70.0" ripplerFill="#ffffff16" text=" " textFill="WHITE" AnchorPane.bottomAnchor="180.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#76787c" glyphName="TAG" size="25" />
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <JFXButton fx:id="btnAcerca" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutY="420.0" onMouseClicked="#acercaWindows" prefHeight="60.0" prefWidth="70.0" ripplerFill="#ffffff16" text=" " textFill="WHITE" AnchorPane.bottomAnchor="120.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#76787c" glyphName="INFORMATION" size="25" />
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <JFXButton fx:id="btnConfiguracion" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutY="480.0" onMouseClicked="#configuracionWindows" prefHeight="60.0" prefWidth="70.0" ripplerFill="#ffffff16" text=" " textFill="WHITE" AnchorPane.bottomAnchor="60.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#76787c" glyphName="SETTINGS" size="25" />
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+                  <JFXButton fx:id="btnSalir" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutY="540.0" onMouseClicked="#loginWindow" prefHeight="60.0" prefWidth="70.0" ripplerFill="#ffffff16" text=" " textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="#76787c" glyphName="EXIT_TO_APP" size="25" />
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
